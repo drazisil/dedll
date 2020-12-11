@@ -2,9 +2,10 @@
   "name": "dedll",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "bin": { 
+    "dedll": "./bin/dedll.js"},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap --coverage"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/drazisil/dedll#readme",
   "devDependencies": {
-    "standard": "16.0.3"
+    "standard": "16.0.3",
+    "tap": "14.11.0"
   },
   "dependencies": {
     "debug": "^4.3.1"

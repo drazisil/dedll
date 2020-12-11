@@ -1,16 +1,15 @@
-const debug = require('debug')('dedll')
+const path = require('path')
 
-/** @type {string[]} */
-const args = process.argv
+function checkFilename (fileName) {
+  if (fileName.includes('/')) {
+    throw new Error('Not Implimented: slashes not supported in filenames.')
+  }
 
-if (args.length !== 3) {
-  console.log('Please pass the file you wish to work on.')
+  if (path.extname(fileName) !== '.lib') {
+    throw new Error('Not Implimented: only .lib is currently supported.')
+  }
 }
 
-const fileName = args[2]
-debug(`fileName: ${fileName}`)
-
-if (fileName.includes('/')) {
-  console.error('Not Implimented: slashes not supported in filenames.')
-  process.exit(-1)
+module.exports = {
+  checkFilename
 }
